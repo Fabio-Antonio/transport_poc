@@ -1,0 +1,18 @@
+{
+    "TableName": "TransportPoc",
+    "AttributeDefinitions": [{
+      "AttributeName": "transportId",
+      "AttributeType": "S"
+    }
+  ],
+    "KeySchema": [{
+      "AttributeName": "transportId",
+      "KeyType": "HASH"
+    }
+  ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 1,
+      "WriteCapacityUnits": 1
+    }
+
+  }
