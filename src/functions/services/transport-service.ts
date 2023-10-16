@@ -114,13 +114,13 @@ export default class TransportService {
     if (!getTransport) return;
 
     getTransport.reservations = getTransport.reservations.map((reservation) => {
-      if ((reservation.reservationId = idReservation)) {
+      if ((reservation.reservationId === idReservation)) {
         return {
           ...reservation,
           delete: true,
         };
       } else {
-        reservation;
+        return reservation;
       }
     });
 
