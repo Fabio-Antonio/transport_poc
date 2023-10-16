@@ -198,7 +198,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/transport-poc/dev/1697422494644-2023-10-16T02:14:54.644Z/transport-poc.zip"
+          "S3Key": "serverless/transport-poc/dev/1697467882042-2023-10-16T14:51:22.042Z/transport-poc.zip"
         },
         "Handler": "src/functions/transport/handler.create",
         "Runtime": "nodejs14.x",
@@ -228,7 +228,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/transport-poc/dev/1697422494644-2023-10-16T02:14:54.644Z/transport-poc.zip"
+          "S3Key": "serverless/transport-poc/dev/1697467882042-2023-10-16T14:51:22.042Z/transport-poc.zip"
         },
         "Handler": "src/functions/transport/handler.getAll",
         "Runtime": "nodejs14.x",
@@ -258,7 +258,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/transport-poc/dev/1697422494644-2023-10-16T02:14:54.644Z/transport-poc.zip"
+          "S3Key": "serverless/transport-poc/dev/1697467882042-2023-10-16T14:51:22.042Z/transport-poc.zip"
         },
         "Handler": "src/functions/transport/handler.getById",
         "Runtime": "nodejs14.x",
@@ -288,7 +288,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/transport-poc/dev/1697422494644-2023-10-16T02:14:54.644Z/transport-poc.zip"
+          "S3Key": "serverless/transport-poc/dev/1697467882042-2023-10-16T14:51:22.042Z/transport-poc.zip"
         },
         "Handler": "src/functions/transport/handler.createReservation",
         "Runtime": "nodejs14.x",
@@ -318,7 +318,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/transport-poc/dev/1697422494644-2023-10-16T02:14:54.644Z/transport-poc.zip"
+          "S3Key": "serverless/transport-poc/dev/1697467882042-2023-10-16T14:51:22.042Z/transport-poc.zip"
         },
         "Handler": "src/functions/transport/handler.deleteReservation",
         "Runtime": "nodejs14.x",
@@ -341,54 +341,54 @@
         "DeleteReservationLogGroup"
       ]
     },
-    "CreateTransportLambdaVersion9h2paZeQjUd7OXIjrbthj8I3tbgUBE3yf5T4vreg": {
+    "CreateTransportLambdaVersionj1cNzSGikFf3IjIbOvUzQz0MnfbDJBgHu14OZIfg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateTransportLambdaFunction"
         },
-        "CodeSha256": "1WRkJBFtFwtHmyC3Vrmldml4LqtB7rICT7OfI1swWhQ="
+        "CodeSha256": "1hai5+QoMm8QR9dpwlUb1jHJlsEQtipNxRfZeROjIVA="
       }
     },
-    "GetAllLambdaVersionk8jjbLgCsoNQWrqd1ptGfpI7fQ4RdFTT361sQDcwYE": {
+    "GetAllLambdaVersionDJS9y0DQDQ3K3CfAEcrVwiUR0ALl8XYDp1I1IHr5Y": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetAllLambdaFunction"
         },
-        "CodeSha256": "1WRkJBFtFwtHmyC3Vrmldml4LqtB7rICT7OfI1swWhQ="
+        "CodeSha256": "1hai5+QoMm8QR9dpwlUb1jHJlsEQtipNxRfZeROjIVA="
       }
     },
-    "GetByIdLambdaVersion7EBQDB57G7CTt7MCwia8RKbpE7TFq9EhbFbtB9n5lJM": {
+    "GetByIdLambdaVersions7xTRdE46lSFZtROmeVzZhZDf7ClonFbwNciGi6MI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetByIdLambdaFunction"
         },
-        "CodeSha256": "1WRkJBFtFwtHmyC3Vrmldml4LqtB7rICT7OfI1swWhQ="
+        "CodeSha256": "1hai5+QoMm8QR9dpwlUb1jHJlsEQtipNxRfZeROjIVA="
       }
     },
-    "CreateReservationLambdaVersionssxAutbvTC6hnnZcKj2DFpwrGGkchDHKlc2cSWpdco": {
+    "CreateReservationLambdaVersionRE3GGbc5UCKxEX0ENRf3BUlAEuTyj6xYUP0QIHiGjc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateReservationLambdaFunction"
         },
-        "CodeSha256": "1WRkJBFtFwtHmyC3Vrmldml4LqtB7rICT7OfI1swWhQ="
+        "CodeSha256": "1hai5+QoMm8QR9dpwlUb1jHJlsEQtipNxRfZeROjIVA="
       }
     },
-    "DeleteReservationLambdaVersionB63fwWomTfwGLHyqh0l6RHou0q2dUzLVat04BjoqA": {
+    "DeleteReservationLambdaVersionQLXCXbcyfJHmOJGL6PVB5Qk7Vsav0IZBtjPkrr7sL0": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteReservationLambdaFunction"
         },
-        "CodeSha256": "1WRkJBFtFwtHmyC3Vrmldml4LqtB7rICT7OfI1swWhQ="
+        "CodeSha256": "1hai5+QoMm8QR9dpwlUb1jHJlsEQtipNxRfZeROjIVA="
       }
     },
     "ApiGatewayRestApi": {
@@ -816,7 +816,7 @@
         }
       }
     },
-    "ApiGatewayDeployment1697422440067": {
+    "ApiGatewayDeployment1697467827895": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1025,20 +1025,12 @@
           {
             "AttributeName": "transportId",
             "AttributeType": "S"
-          },
-          {
-            "AttributeName": "time",
-            "AttributeType": "S"
           }
         ],
         "KeySchema": [
           {
             "AttributeName": "transportId",
             "KeyType": "HASH"
-          },
-          {
-            "AttributeName": "time",
-            "KeyType": "RANGE"
           }
         ],
         "ProvisionedThroughput": {
@@ -1060,7 +1052,7 @@
     "CreateTransportLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateTransportLambdaVersion9h2paZeQjUd7OXIjrbthj8I3tbgUBE3yf5T4vreg"
+        "Ref": "CreateTransportLambdaVersionj1cNzSGikFf3IjIbOvUzQz0MnfbDJBgHu14OZIfg"
       },
       "Export": {
         "Name": "sls-transport-poc-dev-CreateTransportLambdaFunctionQualifiedArn"
@@ -1069,7 +1061,7 @@
     "GetAllLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetAllLambdaVersionk8jjbLgCsoNQWrqd1ptGfpI7fQ4RdFTT361sQDcwYE"
+        "Ref": "GetAllLambdaVersionDJS9y0DQDQ3K3CfAEcrVwiUR0ALl8XYDp1I1IHr5Y"
       },
       "Export": {
         "Name": "sls-transport-poc-dev-GetAllLambdaFunctionQualifiedArn"
@@ -1078,7 +1070,7 @@
     "GetByIdLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetByIdLambdaVersion7EBQDB57G7CTt7MCwia8RKbpE7TFq9EhbFbtB9n5lJM"
+        "Ref": "GetByIdLambdaVersions7xTRdE46lSFZtROmeVzZhZDf7ClonFbwNciGi6MI"
       },
       "Export": {
         "Name": "sls-transport-poc-dev-GetByIdLambdaFunctionQualifiedArn"
@@ -1087,7 +1079,7 @@
     "CreateReservationLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateReservationLambdaVersionssxAutbvTC6hnnZcKj2DFpwrGGkchDHKlc2cSWpdco"
+        "Ref": "CreateReservationLambdaVersionRE3GGbc5UCKxEX0ENRf3BUlAEuTyj6xYUP0QIHiGjc"
       },
       "Export": {
         "Name": "sls-transport-poc-dev-CreateReservationLambdaFunctionQualifiedArn"
@@ -1096,7 +1088,7 @@
     "DeleteReservationLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteReservationLambdaVersionB63fwWomTfwGLHyqh0l6RHou0q2dUzLVat04BjoqA"
+        "Ref": "DeleteReservationLambdaVersionQLXCXbcyfJHmOJGL6PVB5Qk7Vsav0IZBtjPkrr7sL0"
       },
       "Export": {
         "Name": "sls-transport-poc-dev-DeleteReservationLambdaFunctionQualifiedArn"

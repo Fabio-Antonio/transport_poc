@@ -49,6 +49,7 @@ export const getById = middyfy(
     } catch (e) {
       return formatJSONResponse({
         status: 500,
+        id,
         message: e,
       });
     }
@@ -61,6 +62,7 @@ export const createReservation = middyfy(
       const { transportId } = (event.body as unknown) as {
         transportId: string;
       };
+      console.info(transportId);
       const reservation = await trasportService.createReservation(transportId);
       const response = {
         status: 201,

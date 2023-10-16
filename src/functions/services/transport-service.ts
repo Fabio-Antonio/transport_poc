@@ -60,7 +60,8 @@ export default class TransportService {
   }
 
   async createReservation(id: string): Promise<IReservation | undefined> {
-    let getTransport = await this.getById(id);
+    try {
+      let getTransport = await this.getById(id);
     if (!getTransport) return;
     const time = getTransport.time;
     const date = new Date(`${getTransport.date}T${time}`);
@@ -69,9 +70,7 @@ export default class TransportService {
     if (
       now > date ||
       !(getTransport.seats > 0) ||
-      Math.round(
-        ((date.getTime() - (now.getTime() % 86400000)) % 3600000) / 60000
-      ) < 30
+      Math.round((date.getTime() - now.getTime()) / 60000) < 30
     )
       return;
     const reservationId = v4();
@@ -88,7 +87,7 @@ export default class TransportService {
         delete: false,
       });
     }
-
+    
     await this.docClient
       .update({
         TableName: this.Tablename,
@@ -105,6 +104,10 @@ export default class TransportService {
       reservationId,
       delete: false,
     };
+    } catch (error) {
+      console.info(error);
+    }
+    
   }
 
   async deleteReservation(
