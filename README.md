@@ -33,6 +33,8 @@ This template contains a single lambda function triggered by an HTTP request mad
 - `aws dynamodb create-table --cli-input-json file://create-table-transport.json --endpoint-url http://localhost:8000`
 - `sls offline --stage local`
 
+![alt text](https://drive.google.com/uc?export=view&id=1LBYM4CBDgoFsGiYaj8hhO0v_JOj1n37O)
+
 Should get Dynamo db tables `aws dynamodb list-tables --endpoint-url http://localhost:8000`
 
 ![alt text](https://drive.google.com/uc?export=view&id=1HeDXWyu_Eox1tjIKO99d-ERiVavva_0E)
@@ -52,7 +54,7 @@ curl --request GET \
   --header 'User-Agent: insomnia/8.2.0'
 
 curl --request GET \
-  --url http://localhost:3000/local/get-one/7eaf8331-4ccc-4c51-afaf-7627e45bbef5 \
+  --url http://localhost:3000/local/get-one/{id} \
   --header 'User-Agent: insomnia/8.2.0'  
 
   curl --request PATCH \
@@ -60,13 +62,14 @@ curl --request GET \
   --header 'Content-Type: application/json' \
   --header 'User-Agent: insomnia/8.2.0' \
   --data '{
-	"transportId":"7eaf8331-4ccc-4c51-afaf-7627e45bbef5"
+	"transportId":"transportId"
 }'
 
 curl --request DELETE \
-  --url http://localhost:3000/local/delete-reservation/7eaf8331-4ccc-4c51-afaf-7627e45bbef5/42c4ff17-b5ae-4d53-9f65-dc3fb5d59b68 \
+  --url http://localhost:3000/local/delete-reservation/{transportId}/{reservationId} \
   --header 'User-Agent: insomnia/8.2.0'
 ```
+![alt text](https://drive.google.com/uc?export=view&id=1mWLDwnBpBgWUlWK0k5XqDKPA6EC1jL_l)
 
 
 ### Remotely
@@ -88,7 +91,7 @@ curl --request GET \
   --header 'User-Agent: insomnia/8.2.0'
 
 curl --request GET \
-  --url https://op0xbk46s4.execute-api.us-east-2.amazonaws.com/dev/get-one/7eaf8331-4ccc-4c51-afaf-7627e45bbef5 \
+  --url https://op0xbk46s4.execute-api.us-east-2.amazonaws.com/dev/get-one/{id} \
   --header 'User-Agent: insomnia/8.2.0'  
 
   curl --request PATCH \
@@ -100,7 +103,7 @@ curl --request GET \
 }'
 
 curl --request DELETE \
-  --url https://op0xbk46s4.execute-api.us-east-2.amazonaws.com/dev/delete-reservation/7eaf8331-4ccc-4c51-afaf-7627e45bbef5/42c4ff17-b5ae-4d53-9f65-dc3fb5d59b68 \
+  --url https://op0xbk46s4.execute-api.us-east-2.amazonaws.com/dev/delete-reservation/{transportId}/{reservationId} \
   --header 'User-Agent: insomnia/8.2.0'
 ```
 
