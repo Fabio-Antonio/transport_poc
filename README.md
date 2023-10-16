@@ -31,6 +31,7 @@ This template contains a single lambda function triggered by an HTTP request mad
 
 - `docker run -p 8000:8000 amazon/dynamo-local   -jar DynamoDBLocal.jar -sharedDb -inMemory`
 - `aws dynamodb create-table --cli-input-json file://create-table-transport.json --endpoint-url http://localhost:8000`
+- add env `export IS_OFFLINE=true`
 - `sls offline --stage local`
 
 ![alt text](https://drive.google.com/uc?export=view&id=1LBYM4CBDgoFsGiYaj8hhO0v_JOj1n37O)
