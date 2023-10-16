@@ -81,21 +81,13 @@ const serverlessConfiguration: AWS = {
             {
               AttributeName: "transportId",
               AttributeType: "S",
-            },
-            {
-              AttributeName: "time",
-              AttributeType: "S",
-            },
+            }
           ],
           KeySchema: [
             {
               AttributeName: "transportId",
               KeyType: "HASH",
-            },
-            {
-              AttributeName: "time",
-              KeyType: "RANGE",
-            },
+            } 
           ],
           ProvisionedThroughput: {
             ReadCapacityUnits: 1,

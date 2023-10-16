@@ -23,7 +23,7 @@ const createTransport: ValidatedEventAPIGatewayProxyEvent<
     (event.body as unknown) as ITransport
   );
   return formatJSONResponse({
-    status:201,
+    status: 201,
     result,
   });
 };
@@ -49,6 +49,7 @@ export const getById = middyfy(
     } catch (e) {
       return formatJSONResponse({
         status: 500,
+        id,
         message: e,
       });
     }

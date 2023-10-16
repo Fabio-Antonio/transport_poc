@@ -60,51 +60,50 @@ export default class TransportService {
   }
 
   async createReservation(id: string): Promise<IReservation | undefined> {
-    let getTransport = await this.getById(id);
-    if (!getTransport) return;
-    const time = getTransport.time;
-    const date = new Date(`${getTransport.date}T${time}`);
-    const now = new Date();
+      let getTransport = await this.getById(id);
+      if (!getTransport) return;
+      const time = getTransport.time;
+      const date = new Date(`${getTransport.date}T${time}`);
+      const now = new Date();
 
-    if (
-      now > date ||
-      !(getTransport.seats > 0) ||
-      Math.round(
-        ((date.getTime() - (now.getTime() % 86400000)) % 3600000) / 60000
-      ) < 30
-    )
-      return;
-    const reservationId = v4();
-    const addReservation: IReservation[] = [];
-    if (!getTransport.reservations.length) {
-      addReservation.push({
+      if (
+        now > date ||
+        !(getTransport.seats > 0) ||
+        Math.round((date.getTime() - now.getTime()) / 60000) < 30
+      )
+        return;
+      const reservationId = v4();
+      const addReservation: IReservation[] = [];
+      if (!getTransport.reservations.length) {
+        addReservation.push({
+          reservationId,
+          delete: false,
+        });
+        getTransport.reservations = addReservation;
+      } else {
+        getTransport.reservations.push({
+          reservationId,
+          delete: false,
+        });
+      }
+
+      await this.docClient
+        .update({
+          TableName: this.Tablename,
+          Key: { transportId: id },
+          UpdateExpression: "SET reservations = :r, seats = :s",
+          ExpressionAttributeValues: {
+            ":r": getTransport.reservations,
+            ":s": getTransport.seats - 1,
+          },
+          ReturnValues: "ALL_NEW",
+        })
+        .promise();
+      return {
         reservationId,
         delete: false,
-      });
-      getTransport.reservations = addReservation;
-    } else {
-      getTransport.reservations.push({
-        reservationId,
-        delete: false,
-      });
-    }
-
-    await this.docClient
-      .update({
-        TableName: this.Tablename,
-        Key: { transportId: id },
-        UpdateExpression: "SET reservations = :r, seats = :s",
-        ExpressionAttributeValues: {
-          ":r": getTransport.reservations,
-          ":s": getTransport.seats - 1,
-        },
-        ReturnValues: "ALL_NEW",
-      })
-      .promise();
-    return {
-      reservationId,
-      delete: false,
-    };
+      };
+   
   }
 
   async deleteReservation(
