@@ -102,3 +102,5 @@ curl --request DELETE \
   --header 'User-Agent: insomnia/8.2.0'
 ```
 
+### Run test 
+- `npx jest --watchAll`
