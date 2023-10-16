@@ -23,7 +23,7 @@ const createTransport: ValidatedEventAPIGatewayProxyEvent<
     (event.body as unknown) as ITransport
   );
   return formatJSONResponse({
-    status:201,
+    status: 201,
     result,
   });
 };
@@ -62,7 +62,6 @@ export const createReservation = middyfy(
       const { transportId } = (event.body as unknown) as {
         transportId: string;
       };
-      console.info(transportId);
       const reservation = await trasportService.createReservation(transportId);
       const response = {
         status: 201,
